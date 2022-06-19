@@ -23,5 +23,5 @@ Jedyny import tego skryptu:
 import numpy as np
 
 Ad 3. Skrypt stanowi implementację LSTM zawierającą wszystkie operacje określone w ... 
-<img src='https://wikimedia.org/api/rest_v1/media/math/render/svg/7dee414820d5c0162ae1fff1899e58b08923944f'></img>
+<br><img src='https://i.stack.imgur.com/L6W94.png'></img>
 
