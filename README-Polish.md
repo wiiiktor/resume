@@ -22,6 +22,7 @@ Ad 2. Sieć RNN działająca stabilnie nawet dla dłuższych tekstów, bez wykor
 Jedyny import tego skryptu: 
 import numpy as np
 
-Ad 3. Skrypt stanowi implementację LSTM zawierającą wszystkie operacje określone w ... 
-<br><img src='https://i.stack.imgur.com/L6W94.png'></img>
+Ad 3. Skrypt stanowi implementację LSTM zawierającą wszystkie operacje określone poniżej: 
+<br><img src='https://i.stack.imgur.com/L6W94.png'></img><br>
+Skrypt nie używa obiektu nn.LSTM PyTorcha. Kluczowy kod: 
 
