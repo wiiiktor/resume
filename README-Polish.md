@@ -3,18 +3,23 @@ CNN działający z batch_size=1
 RNN 2-warstwowy zaimplementowany z użyciem "czystego" Pythona & NumPy
 LSTM 2-warstwowy zaimplementowany bez użycia obiektu nn.LSTM PyTorcha 
 
-Ad 1. Sieć uzysktuje wynik Accuracy TOP-1 77% oraz Accuracy TOP-5 ..., czyli SOTA, bez wykorzystania Batch Normalization. Musiałem uniknąć stosowania BN, żeby móc użyć batch_size=1, ponieważ moim planem było stworzenie sieci zawierającej wewnętrzne warunki, uruchamiające podsieci. Innymi słowy, chciałem stworzyć kod, uruchamiający podsieć dedykowaną dla zwierząt, jeśli wykryte zostanie zwierze (if animal then run subnetwork recognizeAnimals). Oczywiście, jeśli stosowałbym batch_size=32, to sieć musiałaby obsłużyć 32 różne obiekty... czasem byłyby to zwierzęta, a czasem samochody. Batch musiałby się "rozjechać", 
+Ad 1. Sieć uzysktuje wynik Accuracy TOP-1 77% oraz Accuracy TOP-5 ..., czyli SOTA, bez wykorzystania Batch Normalization. Musiałem uniknąć stosowania BN, żeby móc użyć batch_size=1, ponieważ moim planem było stworzenie sieci zawierającej wewnętrzne warunki, uruchamiające kolejne podsieci. Innymi słowy, chciałem stworzyć kod, uruchamiający podsieć dedykowaną dla zwierząt, jeśli wykryte zostanie zwierze (if result==Animal then run subnetwork recognizeAnimals). Oczywiście, jeśli stosowałbym batch_size=32, to sieć musiałaby obsłużyć 32 różne obiekty... a to byłyby zwierzęta, samochody, budynki, etc, w jednym batch'u. Batch musiałby się "rozjechać", a PyTorch oczywiście nie posiada takicej funkcjonalności. Dlatego musiałbem znaleźć rozwiązanie umożliwjające trening przy batch_size=1.  
 
-Chciałem uniknąć stosowania BN, żeby móc stosować batch_size=1, ponieważ chciałe. Rozwiązaniem okazało się podejście opisane tutaj: https://arxiv.org/pdf/1903.10520.pdf / https://youtu.be/m3TN9FFmqsI a dokładnie wariant GN+WS (Group Normalization + Weight Standarization). Kluczowy fragment kodu znajduje się poniżej: 
+Rozwiązaniem okazało się podejście opisane tutaj: https://arxiv.org/pdf/1903.10520.pdf / https://youtu.be/m3TN9FFmqsI a dokładnie wariant GN+WS (Group Normalization + Weight Standarization). Kluczowy fragment kodu znajduje się poniżej: 
 
 Conv2dWS(nn.Module):....
 Sieć CNN zawiera warstwy: 
 self.Conv2dWS()
 self.GroupNorm()
-zamiast standardowego zestawu: 
+zamiast standardowej pary: 
 self.Conv2d()
 self.BatchNorm()
 
+Ad 2. Sieć RNN działająca stabilnie nawet dla dłuższych tekstów, bez wykorzystania obiektu nn.RNN czy nn.LSTM PyTorcha, jedynie czystego Pythona + NumPy. Skrypt jest modyfikacją kodu Andrej'a Karpathy'ego, poprzez dodanie 2. warstwy, co znacznie zwiększa jego możliwości, oraz stopniowe zmniejszanie learning_rate. Skrypt samodzielnie liczy pochodne oraz stany pamięci dla optymalizatora Adagrad. Poniżej przykładowy tekst wygenerowany po nauce na 400 liniach dramatu Szekspira: 
 
 
-, jedynie Python+NumPy. Kod liczy pochodne, a nawet zawiera implementację optymalizatora Adagrad. Podstawą był skrypt Karpathy'ego, 1-warstwowy, do którego dodałem drugą warstwę.
+
+Jedyny import tego skryptu: 
+import numpy as np
+
+Ad 3. 
