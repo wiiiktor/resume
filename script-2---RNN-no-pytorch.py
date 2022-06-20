@@ -134,6 +134,7 @@ while True:
     if n == 100_000: learning_rate /= 2; print(learning_rate)
     if n == 400_000: learning_rate /= 2; print(learning_rate)
     if n == 1_000_000: learning_rate /= 2; print(learning_rate)
+        
     # perform parameter update with Adagrad
     for param, dparam, mem in zip([ Wxh,  Whh,  Whh2,  Wh2h2,  Wh2y,  bh,  bh2,  by],
                                   [dWxh, dWhh, dWhh2, dWh2h2, dWh2y, dbh, dbh2, dby],
