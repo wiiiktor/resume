@@ -1,7 +1,7 @@
-Repozytorium zawiera następujące skrypty AI mojego autorstwa:
-<ol><li>CNN działający z batch_size=1</li>
-<li>RNN 2-warstwowy zaimplementowany z użyciem "czystego" Pythona & NumPy, z liczeniem pochodnych</li>
-<li>LSTM 2-warstwowy zaimplementowany bez użycia obiektu nn.LSTM PyTorcha</li></ol>
+This repository contains a few AI srcipts wrote by me:
+<ol><li>CNN working with batch_size=1</li>
+<li>RNN 2-layer, implemented with raw Pythona & NumPy, with calculating derivatives</li>
+<li>LSTM 2-layer with noe use of nn.LSTM PyTorch object</li></ol>
 
 <h2>Ad 1. CNN działający z batch_size=1</h2>
 Sieć uzysktuje wynik Accuracy TOP-1 77% oraz Accuracy TOP-5 ..., czyli SOTA, bez wykorzystania Batch Normalization. Musiałem uniknąć stosowania BN, żeby móc użyć batch_size=1, ponieważ moim planem było stworzenie sieci zawierającej wewnętrzne warunki, uruchamiające kolejne podsieci. Innymi słowy, chciałem stworzyć kod, uruchamiający podsieć dedykowaną dla zwierząt, jeśli wykryte zostanie zwierze (if result==Animal then run subnetwork recognizeAnimals). Oczywiście, jeśli stosowałbym batch_size=32, to sieć musiałaby obsłużyć 32 różne obiekty... a to byłyby zwierzęta, samochody, budynki, etc, w jednym batch'u. Batch musiałby się "rozjechać", a PyTorch oczywiście nie posiada takicej funkcjonalności. Dlatego musiałbem znaleźć rozwiązanie umożliwjające trening przy batch_size=1.
