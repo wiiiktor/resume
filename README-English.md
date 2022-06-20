@@ -1,6 +1,6 @@
 This repository contains a few AI srcipts that I wrote:
 <ol><li>CNN working with batch_size=1</li>
-<li>RNN 2-layer, implemented with raw Pythona & NumPy, with calculating derivatives</li>
+<li>RNN 2-layer, implemented with raw Python & NumPy, with calculating derivatives</li>
 <li>LSTM 2-layer with no use of nn.LSTM PyTorch object</li></ol>
 
 <h2>Ad 1. CNN working with batch_size=1</h2>
@@ -21,7 +21,7 @@ self.Conv2d()
 self.BatchNorm()
 ```
 
-<h2>Ad 2. RNN 2-layer, implemented with raw Pythona & NumPy</h2>
+<h2>Ad 2. RNN 2-layer, implemented with raw Python & NumPy</h2>
 Sieć RNN działająca stabilnie nawet dla dłuższych tekstów, bez wykorzystania obiektu nn.RNN czy nn.LSTM PyTorcha, jedynie czystego Pythona + NumPy. Skrypt jest modyfikacją kodu Andreja Karpathego, poprzez dodanie 2. warstwy, co znacznie zwiększa jego możliwości, oraz stopniowe zmniejszanie learning_rate. Skrypt samodzielnie liczy pochodne oraz stany pamięci dla optymalizatora Adagrad. Poniżej przykładowy tekst wygenerowany po nauce na 400 liniach dramatu Szekspira: 
 
 ```{python}
