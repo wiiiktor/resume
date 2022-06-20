@@ -1,5 +1,6 @@
 """
-Minimal character-level Vanilla RNN model. Written by Andrej Karpathy (@karpathy).
+Minimal character-level Vanilla RNN model. 
+Written by Andrej Karpathy (@karpathy).
 The second layer added by Wiktor Migaszewski.
 BSD License
 """
