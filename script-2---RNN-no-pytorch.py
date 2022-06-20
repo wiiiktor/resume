@@ -110,7 +110,7 @@ n, p = 0, 0
 mWxh, mWhh, mWhh2, mWh2h2, mWh2y = np.zeros_like(Wxh), np.zeros_like(Whh), np.zeros_like(Whh2), np.zeros_like(Wh2h2), np.zeros_like(Wh2y)
 mbh, mbh2, mby = np.zeros_like(bh), np.zeros_like(bh2), np.zeros_like(by)  # memory variables for Adagrad
 smooth_loss = -np.log(1.0 / vocab_size) * seq_length  # loss at iteration 0
-while True:
+while True:  # we loop indefinitely
     # prepare inputs (we're sweeping from left to right in steps seq_length long)
     if p + seq_length + 1 >= len(data) or n == 0:
         hprev = np.zeros((hidden_size, 1))  # reset RNN memory
@@ -130,6 +130,7 @@ while True:
     smooth_loss = smooth_loss * 0.999 + loss * 0.001
     if n % print_every == 0: print('iter ' + str(n) + ', loss: ' + str(smooth_loss))   # print progress
 
+    # lowering the learning rate over time
     if n == 20_000: learning_rate /= 2; print(learning_rate)
     if n == 100_000: learning_rate /= 2; print(learning_rate)
     if n == 400_000: learning_rate /= 2; print(learning_rate)
