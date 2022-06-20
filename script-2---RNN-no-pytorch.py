@@ -6,7 +6,7 @@ BSD License
 import numpy as np
 
 # data I/O
-data = open('data/400.txt', 'r').read()  # should be simple plain text file
+data = open('data/40.txt', 'r').read()  # should be simple plain text file
 chars = list(set(data))
 data_size, vocab_size = len(data), len(chars)
 print('data has ' + str(data_size) + ' characters, ' + str(vocab_size) + ' unique.')
