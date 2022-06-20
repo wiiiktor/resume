@@ -28,7 +28,7 @@ Sieć RNN działająca stabilnie nawet dla dłuższych tekstów, bez wykorzystan
  irst Citizen:
 Before we proceed any further, hear  
 ```
-This is the only import line in this script: 
+This is the only import line in this script :smiley:
 ```{python}
 import numpy as np
 ```
