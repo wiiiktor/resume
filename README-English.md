@@ -4,18 +4,19 @@ This repository contains a few AI srcipts that I wrote:
 <li>LSTM 2-layer with no use of nn.LSTM PyTorch object</li></ol>
 
 <h2>Ad 1. CNN working with batch_size=1</h2>
-Sieć uzysktuje wynik Accuracy TOP-1 77% oraz Accuracy TOP-5 ..., czyli SOTA, bez wykorzystania Batch Normalization. Musiałem uniknąć stosowania BN, żeby móc użyć batch_size=1, ponieważ moim planem było stworzenie sieci zawierającej wewnętrzne warunki, uruchamiające kolejne podsieci. Innymi słowy, chciałem stworzyć kod, uruchamiający podsieć dedykowaną dla zwierząt, jeśli wykryte zostanie zwierze (if result==Animal then run subnetwork recognizeAnimals). Oczywiście, jeśli stosowałbym batch_size=32, to sieć musiałaby obsłużyć 32 różne obiekty... a to byłyby zwierzęta, samochody, budynki, etc, w jednym batch'u. Batch musiałby się "rozjechać", a PyTorch oczywiście nie posiada takicej funkcjonalności. Dlatego musiałbem znaleźć rozwiązanie umożliwjające trening przy batch_size=1.
+Sieć uzysktuje wynik Accuracy TOP-1 77% oraz Accuracy TOP-5 ..., 
+Network reaches TOP-1 Accuracy of 77% and TOP-5 Accuracy of ..., without using Batch Normalisation. I had a reason to avoid using BN, as I needed batch_size=1. My application aimed at running subnetworks for various tasks, for example if initial detection was "an animal", a subnetwork "recognizeAnimals" would be used, but in case of initial detection of "a car", a subnetwork "recognizeCarModels" would be used. This concept requires using conditions depending on the initial results that triggered different paths through the network. Well, with a typical batch_size=32 I would not be albe to do it, as batch would have to be splat into different subnetworks... This is why I needed a method working with batch_size=1.
 
-I use a solution described here: https://arxiv.org/pdf/1903.10520.pdf / https://youtu.be/m3TN9FFmqsI To be more specific, an option of GN+WS (Group Normalization + Weight Standarization). Key code fragment: 
+I uses a solution described here: https://arxiv.org/pdf/1903.10520.pdf / https://youtu.be/m3TN9FFmqsI To be more specific, an option of GN+WS (Group Normalization + Weight Standarization). Key code fragment: 
 ```{python}
 Conv2dWS(nn.Module):....
 ```
-CNN includes layers of: 
+CNN now includes layers of: 
 ```{python}
 self.Conv2dWS()
 self.GroupNorm()
 ```
-instead of standard: 
+instead of standard ones: 
 ```{python}
 self.Conv2d()
 self.BatchNorm()
