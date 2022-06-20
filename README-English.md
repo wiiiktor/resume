@@ -5,10 +5,7 @@ This repository contains a few AI srcipts that I wrote:
 
 <h2>Ad 1. CNN working with batch_size=1</h2>
 Network reaches TOP-1 Accuracy of 77% and TOP-5 Accuracy of ..., without using Batch Normalisation. I had a reason to avoid using BN, as I needed batch_size=1. My application aimed at running subnetworks for various tasks, for example if initial detection was "an animal", a subnetwork "recognizeAnimals" would be used, but in case of initial detection of "a car", a subnetwork "recognizeCarModels" would be used. This concept requires using conditions depending on the initial results that triggered different paths through the network. Well, with a typical batch_size=32 I would not be albe to do it, as batch would have to be splat into different subnetworks... This is why I needed a method working with batch_size=1.
-
-
-
-
+ 
 I used a solution described here: https://arxiv.org/pdf/1903.10520.pdf / https://youtu.be/m3TN9FFmqsI To be more specific, an option of GN+WS (Group Normalization + Weight Standarization). Key code fragment: 
 ```{python}
 Conv2dWS(nn.Module):....
