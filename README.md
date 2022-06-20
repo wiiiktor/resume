@@ -1,6 +1,6 @@
 This repository contains a few AI srcipts that I wrote:
 1. CNN working with batch_size=1
-2. RNN 2-layer, implemented with raw Python & NumPy, with calculating derivatives
+2. RNN 2-layer, implemented with raw Python & NumPy, with derivatives calculation
 3. LSTM 2-layer, with no use of nn.LSTM PyTorch object
 
 It also contains my CV, but in short: I am a graduate of the Warsaw School of Economics, with 10+ years of work experience of a business analyst for a few corporations (Masterfoods, METRO Group, Netia, Whirlpool). I had also an episode of work as PHP programmer years ago; apart from that I only had professional expeience in scarce scirpting of Microsoft tools or specialised applications. Still, I wrote code in PHP, C#, JAVA and Python, to name a few. Currently, I am interested in AI / Machine Learning.
