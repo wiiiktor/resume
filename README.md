@@ -13,7 +13,8 @@ I used a solution described in here: https://arxiv.org/pdf/1903.10520.pdf / http
 class Conv2dWS(nn.Conv2d):
     def __init__(self, in_channels=512, out_channels=512, kernel_size=(3, 3), stride=(1, 1),
                  padding=(1, 1), dilation=1, groups=1, bias=True):
-        super(Conv2dWS, self).__init__(in_channels, out_channels, kernel_size, stride, padding, dilation, groups, bias)
+        super(Conv2dWS, self).__init__(in_channels, out_channels, 
+                                       kernel_size, stride, padding, dilation, groups, bias)
 
     def forward(self, x):
         weight = self.weight
