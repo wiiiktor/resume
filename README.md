@@ -49,5 +49,11 @@ Script implements all the LSTM operations defined below:
 
 Key code fragment: 
 ```{python}
-gates = ...
+ingate, forgetgate, cellgate, outgate = gates.chunk(4, 1)
+ingate = torch.sigmoid(ingate)
+forgetgate = torch.sigmoid(forgetgate)
+cellgate = torch.tanh(cellgate)
+outgate = torch.sigmoid(outgate)
+cA = (forgetgate * cA) + (ingate * cellgate)
+hA = outgate * torch.tanh(cA)
 ```
