@@ -122,7 +122,7 @@ while True:  # we loop indefinitely
 
     # sample from the model now and then
     if n % print_every == 0:
-        sample_ix = sample(hprev, h2prev, inputs[0], 50)
+        sample_ix = sample(hprev, h2prev, inputs[0], 150)
         txt = ''.join(ix_to_char[ix] for ix in sample_ix)
         print('----\n ' + txt + ' \n----')
 
