@@ -29,13 +29,9 @@ RNN working even for longer fragments of text, with no use of PyTorch nn.RNN obj
 ```
 Second Citizen:
 One word, good citizens.
-
 First Citizen:
 Let us kill him, and we'll have corn  
-
  omish?
-
-
 SlfancoC
 ouu kencekiss soke, shel aememis 
 ```
