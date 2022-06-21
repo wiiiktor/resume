@@ -26,9 +26,18 @@ self.BatchNorm()
 ## Ad 2. RNN 2-layer, implemented with raw Python & NumPy
 RNN working even for longer fragments of text, with no use of PyTorch nn.RNN object, but only Python + NumPy. Sript is a modification of Andrey Karpathy code, by adding the 2. layer (thus making is capable of learning from much reacher text databases) and gradual decreasing learning rate. Script calculates derivatives and even implements Adagrad optmiser. Below you can find a sample of text generated after learning from 40 lines of Sheakspeare:
 
-```{python}
- irst Citizen:
-Before we proceed any further, hear  
+```
+Second Citizen:
+One word, good citizens.
+
+First Citizen:
+Let us kill him, and we'll have corn  
+
+ omish?
+
+
+SlfancoC
+ouu kencekiss soke, shel aememis 
 ```
 This is the only import line in this script :smiley:
 ```{python}
