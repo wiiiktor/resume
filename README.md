@@ -9,6 +9,24 @@ I started to work on AI tasks in 2007 (yes, before the end of the AI Winter) and
 ## Ad 1. ChatGPT + LangChain prompting
 I loaded a manual with a lot of graphics placed between or next to text paragraphs. LLM's job is to create descriptions to these graphics, although obviously it does not "look" at them, but only text around. I wrote a prompt that gave 18 good results out of 19 in total (only the first photo was described incorrectly). 
 
+Manual includes graphics: 
+<img width="521" alt="image" src="https://github.com/wiiiktor/resume/assets/41764319/c84587fe-b954-40ee-9070-cfa322c78c44">
+which where replaced by codes in a specific format:
+<img width="668" alt="image" src="https://github.com/wiiiktor/resume/assets/41764319/1e2aec8c-0a07-48fe-9360-5a7733e06770">
+
+I used the following LangChain prompt: 
+    template = """
+    In a document you will find {num_of_codes} codes in a format graphic-code-xxx where xxx are three integers.
+    For example graphic-code-003.
+    Your aim is to make a brief summary of the text around the codes, 
+    especially in a paragraph just before the text.
+    You provide a reply in a format:
+        ("graphic-code-001": "summary of the text around the code")
+    Document: {document}
+    """
+and received codes as shown below (only the first description is wrong, but all other 18 are correct):
+![image](https://github.com/wiiiktor/resume/assets/41764319/20370f13-ecde-4ef2-89fd-2d095711a926)
+
 ## Ad 2. CNN working with batch_size=1
 Network reaches TOP-1 Accuracy of 77% and TOP-5 Accuracy of 93%, without using Batch Normalisation. I had a reason to avoid using BN, as I needed batch_size=1. My application aimed at running subnetworks for various tasks, for example if initial detection was "an animal", a subnetwork "recognizeAnimals" would be used, but in case of initial detection of "a car", a subnetwork "recognizeCarModels" would be used. This concept requires using conditions depending on the initial results that triggered different paths through the network. Well, with a typical batch_size=32 I would not be albe to do it, as batch would have to be splat into different subnetworks... This is why I needed a method working with batch_size=1.
 
