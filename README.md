@@ -10,20 +10,20 @@ I started to work on AI tasks in 2007 (yes, before the end of the AI Winter) and
 I loaded a manual with a lot of graphics placed between or next to text paragraphs. LLM's job is to create descriptions to these graphics, although obviously it does not "look" at them, but only text around. I wrote a prompt that gave 18 good results out of 19 in total (only the first photo was described incorrectly). 
 
 Manual includes graphics:<br>
-![image](https://github.com/wiiiktor/resume/assets/41764319/c53e291c-7ad9-464a-bbfe-b748ba2f92ae)
+<img width="711" alt="image" src="https://github.com/wiiiktor/resume/assets/41764319/ed9c34e6-ec28-4861-88ea-f884fc67d71c">
 <br>which where replaced by codes in a specific format:<br>
-<img width="668" alt="image" src="https://github.com/wiiiktor/resume/assets/41764319/1e2aec8c-0a07-48fe-9360-5a7733e06770">
+<img width="685" alt="image" src="https://github.com/wiiiktor/resume/assets/41764319/35bcea2f-2f48-4ec0-afc3-b59133e87d5a">
+
 
 I used the following LangChain prompt:
 ```{code}
     template = """
-    In a document you will find {num_of_codes} codes in a format graphic-code-xxx where xxx are three integers.
-    For example graphic-code-003.
-    Your aim is to make a brief summary of the text around the codes, 
-    especially in a paragraph just before the text.
-    You provide a reply in a format:
-        ("graphic-code-001": "summary of the text around the code")
-    Document: {document}
+        In a document you will find {num_of_codes} codes in a format graphic-code-xxx where xxx are three integers.
+        For example graphic-code-003.
+        Your aim is to make a brief summary of the text around the codes, especially in a paragraph just before the text.
+        You provide a reply in a format:
+            ("graphic-code-001": "summary of the text around the code")
+        Document: {document}
     """
 ```
 and received codes as shown below (only the first description is wrong, but all other 18 are correct):
