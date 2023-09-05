@@ -9,9 +9,9 @@ I started to work on AI tasks in 2007 (yes, before the end of the AI Winter) and
 ## Ad 1. ChatGPT + LangChain prompting
 I loaded a manual with a lot of graphics placed between or next to text paragraphs. LLM's job is to create descriptions to these graphics, although obviously it does not "look" at them, but only text around. I wrote a prompt that gave 18 good results out of 19 in total (only the first photo was described incorrectly). 
 
-Manual includes graphics: 
-<img width="521" alt="image" src="https://github.com/wiiiktor/resume/assets/41764319/c84587fe-b954-40ee-9070-cfa322c78c44">
-which where replaced by codes in a specific format:
+Manual includes graphics:<br>
+![image](https://github.com/wiiiktor/resume/assets/41764319/c53e291c-7ad9-464a-bbfe-b748ba2f92ae)
+<br>which where replaced by codes in a specific format:<br>
 <img width="668" alt="image" src="https://github.com/wiiiktor/resume/assets/41764319/1e2aec8c-0a07-48fe-9360-5a7733e06770">
 
 I used the following LangChain prompt: 
