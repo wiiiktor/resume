@@ -14,7 +14,8 @@ Manual includes graphics:<br>
 <br>which where replaced by codes in a specific format:<br>
 <img width="668" alt="image" src="https://github.com/wiiiktor/resume/assets/41764319/1e2aec8c-0a07-48fe-9360-5a7733e06770">
 
-I used the following LangChain prompt: 
+I used the following LangChain prompt:
+```{python}
     template = """
     In a document you will find {num_of_codes} codes in a format graphic-code-xxx where xxx are three integers.
     For example graphic-code-003.
@@ -24,6 +25,7 @@ I used the following LangChain prompt:
         ("graphic-code-001": "summary of the text around the code")
     Document: {document}
     """
+```
 and received codes as shown below (only the first description is wrong, but all other 18 are correct):
 ![image](https://github.com/wiiiktor/resume/assets/41764319/20370f13-ecde-4ef2-89fd-2d095711a926)
 
