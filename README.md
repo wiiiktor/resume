@@ -27,7 +27,7 @@ I used the following LangChain prompt:
         Document: {document}
     """
 ```
-and received codes as shown below (only the first description is wrong, but all other 18 are correct):
+and received graphic captions as shown below (only the first description is wrong, but all other 18 are correct):
 ![image](https://github.com/wiiiktor/resume/assets/41764319/20370f13-ecde-4ef2-89fd-2d095711a926)
 
 ## Ad 2. CNN working with batch_size=1
