@@ -15,7 +15,7 @@ Manual includes graphics:<br>
 <img width="668" alt="image" src="https://github.com/wiiiktor/resume/assets/41764319/1e2aec8c-0a07-48fe-9360-5a7733e06770">
 
 I used the following LangChain prompt:
-```{python}
+```{code}
     template = """
     In a document you will find {num_of_codes} codes in a format graphic-code-xxx where xxx are three integers.
     For example graphic-code-003.
