@@ -12,7 +12,8 @@ I loaded a manual with a lot of graphics placed between or next to text paragrap
 Manual includes graphics:<br>
 <img width="711" alt="image" src="https://github.com/wiiiktor/resume/assets/41764319/ed9c34e6-ec28-4861-88ea-f884fc67d71c">
 <br>which where replaced by codes in a specific format:<br>
-<img width="685" alt="image" src="https://github.com/wiiiktor/resume/assets/41764319/35bcea2f-2f48-4ec0-afc3-b59133e87d5a">
+<img width="682" alt="image" src="https://github.com/wiiiktor/resume/assets/41764319/72d95220-e8b7-4c82-9365-7231c0f90ceb">
+
 
 
 I used the following LangChain prompt:
