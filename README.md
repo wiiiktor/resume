@@ -3,6 +3,9 @@ This repository contains a few AI srcipts that I wrote:
 2. CNN working with batch_size=1
 3. RNN 2-layer, implemented with raw Python & NumPy, with derivatives calculation
 4. LSTM 2-layer, with no use of nn.LSTM PyTorch object
+5. Names generator, Generative AI within NLP
+6. Source code language recognition, based on a very short code sample
+7. Ukraine tweets, finding "expert tweets"
 
 I started to work on AI tasks in 2007 (yes, before the end of the AI Winter) and would like to develop in this area. This repository contains my full CV, but here are a few short words: I am a graduate of the Warsaw School of Economics, with 10+ years of work experience of a business analyst for a few corporations (Masterfoods, METRO Group, Whirlpool). I had also an episode of [work as PHP programmer](https://github.com/wiiiktor/resume/blob/main/Wiktor_Migaszewski_referencje_serwisu_konsumenckiego_www_Bazaria_pl.pdf) years ago; apart from that I only had professional experience in scarce scirpting of Microsoft tools or specialised applications. Still, I wrote code in PHP, C#, JAVA and Python, for my hobby projects. Over the last years, I worked in a family company Efneo.com, operating on a bicycle market. Currently, I develop my interest in AI / Machine Learning and would like to enter this area to gain prefessional experience and create my own AI company in the future.
 
@@ -94,3 +97,17 @@ outgate = torch.sigmoid(outgate)
 cA = (forgetgate * cA) + (ingate * cellgate)
 hA = outgate * torch.tanh(cA)
 ```
+
+## Ad 5. Names generation
+Checking how randomness added to a neural network can enhance its creativity.
+
+## Ad 6. Source code language recognition
+Classification of a very short code sample into categories: python, java, c#, etc.
+
+## Ad 7. Ukraine "expert tweets"
+Finding "expert tweets" in an ocean of online communication, based on some guessed criteria: 
+- Maybe "expert" messages are longer?
+- Or maybe they are use slightly different vocabulary?
+- Or maybe "non-experts" abuse dirty words in their comments?
+- Or maybe "experts" include more hashes or links in their messages?
+- Or should we dig deeper into Natural Language Understanding tools, like contextual embeddings from the state-of-the-art transformer models like BERT?
