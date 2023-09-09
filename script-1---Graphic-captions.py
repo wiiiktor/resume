@@ -33,12 +33,12 @@ def convert_text_to_page_content_format(text):
     return RawDocument(page_content=text, metadata={})
 
 
-DOCX_PATH = './data/'
+DOCX_PATH = './files/docx/'
 
 list_of_files = get_files_from_dir(DOCX_PATH)
 pprint(list_of_files, width = 200)
 
-chat = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo", max_tokens=500)
+chat = ChatOpenAI(temperature=0, model_name="gpt-4", max_tokens=700)
 
 text = read_docx(list_of_files[0])
 print(f"Długość załadowanego pliku w znakach: {len(text)}, w słowach: {len(text.split())}")
@@ -48,25 +48,25 @@ text = convert_text_to_page_content_format(text)
 if isinstance(text, RawDocument):
     text = text.page_content
 
-num_of_codes = text.count("graphic-code")
+num_graphics = text.count("graphic-number")
 
 template = """
-In a document you will find {num_of_codes} codes in a format 
-graphic-code-xxx where xxx are three integers.
-For example graphic-code-003.
+In a document you will find {num_graphics} codes in a format 
+graphic-number-xxx where xxx are three integers.
+For example graphic-number-003.
 Your aim is to make a brief summary of the text around the codes, 
 especially in a paragraph just before the text.
 You provide a reply in a format:
-    ("graphic-code-001": "summary of the text around the code")
+    ("graphic-number-001": "description to the graphic")
 
 Document: {document}
 """
 
 prompt = PromptTemplate(
-    input_variables = ["num_of_codes", "document"],
+    input_variables = ["num_graphics", "document"],
     template = template
 )
 
 chain = LLMChain(llm = chat, prompt = prompt)
-captions = chain.run(document = text, num_of_codes = num_of_codes)
-pprint(captions)
+captions = chain.run(document = text, num_graphics = num_graphics)
+pprint(captions, width=150)
