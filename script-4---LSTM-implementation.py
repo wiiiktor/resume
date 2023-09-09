@@ -314,3 +314,76 @@ def sample(net, size=2000, prime=' ', top_k=5):
     return ''.join(chars)
 
 print('################\n', sample(net, sample_size, prime=prime1, top_k=top_k))
+
+
+''' RESULT EXAMPLE: 
+###################################################################################
+ Epoch: 100/100... Step: 31500... Loss: 0.4776... Val Loss: 3.4674 Val Accuracy:  0.4107 
+###################################################################################
+before me recominr good words to thee will flatter
+Beneat 
+
+###################################################################################
+ Epoch: 100/100... Step: 31600... Loss: 0.4090... Val Loss: 3.6070 Val Accuracy:  0.4071 
+###################################################################################
+before receive the fartiend comporan ffecendmnd the me, t 
+
+###################################################################################
+ Epoch: 100/100... Step: 31700... Loss: 0.4479... Val Loss: 3.5866 Val Accuracy:  0.4089 
+###################################################################################
+before repetl heard ofinly, to the seorat of the whole bo 
+
+Thu Jun 16 18:48:29 2022
+################
+ before mekent,
+The seak thit
+Corn for the rich men only: with these shreds
+They vented their cares, digest they art upot in receive
+But it pactice, who discrements are
+That unconnot
+See what I do deliver out to each,
+Yet I can make my aunit up, poode.
+
+First Citizen:
+It was an answer: body's made for us
+yet: suffer us to famish, and their store-houses
+crammed with grain; make edicts for usury, to
+supporter in the horns o' the moon,
+Shouting their emigh? belly,
+And you the moty sing cowardly. But, I beseech you,
+Where huse they will; levedese they whas an on the howserving. I why twas don these low speaks! What shouds with meir but the how recome rather that I shall tell you
+I this make lice candeded complain,
+What could the commonalty.
+
+Second Citizen:
+What he cannot ees, the garte do reat our senature
+With the rest, what services he has done fatoess,
+Whose but the Capitol; who's like to rain their liking
+Bearing
+Lith these shered they lack discretion,
+Yet are they will; and
+there wollh as antigut apms, the hobl fo the common, you saye their own rates; whereof, they say,
+The city is well stored.
+
+MARCIUS:
+Hang 'em! They say!
+They'll sit to the people.
+
+All:
+We lood, neve sence it well, seral shouts aroutts,
+That, luaved us than says the other troog
+Or be arch you corlinc out
+is,
+Bheir own choice: one's Junius Brutus,
+Sicinius Velutus, and I know not--'Sdeath!
+The rabble should have first unroof'd the city,
+Ere so prevail'd with me what services he has done for his country hase forthights and gats mese lincesence are thorest le body. The belly answer?;
+Where go you,
+Where ho services of loke a there while on'th  own from them to you
+And no way from yourselvis. What sorvest ast ffricts of youe opitizen:
+Sorthy proud; which he
+Thank now't  arts their ruth,
+And let me use my sword, I's make sigh'd poorse fribfdded their vuugarse that we and we'll say we proceeds on owes arch agest their rotd,
+not eal in rich ang their carss,
+When you do live upon; and fit in up, these a there 
+'''
