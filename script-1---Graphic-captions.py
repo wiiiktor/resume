@@ -33,7 +33,7 @@ def convert_text_to_page_content_format(text):
     return RawDocument(page_content=text, metadata={})
 
 
-DOCX_PATH = './files/docx/'
+DOCX_PATH = './data/'
 
 list_of_files = get_files_from_dir(DOCX_PATH)
 pprint(list_of_files, width = 200)
