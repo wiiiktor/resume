@@ -51,7 +51,8 @@ if isinstance(text, RawDocument):
 num_of_codes = text.count("graphic-code")
 
 template = """
-In a document you will find {num_of_codes} codes in a format graphic-code-xxx where xxx are three integers.
+In a document you will find {num_of_codes} codes in a format 
+graphic-code-xxx where xxx are three integers.
 For example graphic-code-003.
 Your aim is to make a brief summary of the text around the codes, 
 especially in a paragraph just before the text.
