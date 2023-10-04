@@ -107,7 +107,7 @@ assistant = RetrieveAssistantAgent(
     },
 )
 
-corpus_file = "../website/docs/wiiiktor-qa.jsonl"
+corpus_file = "wiiiktor-qa.jsonl"  # this is my dataset, Question-Answer pairs taken from historic emails
 
 ragproxyagent = RetrieveUserProxyAgent(
     name="ragproxyagent",
