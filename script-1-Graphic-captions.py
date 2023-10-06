@@ -1,62 +1,61 @@
+import os
+import docx
+from dotenv import load_dotenv, find_dotenv
 from pprint import pprint
 from pydantic import BaseModel
-import os
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains.llm import LLMChain
-import docx
-from dotenv import load_dotenv, find_dotenv
+
 load_dotenv(find_dotenv())
 
-def read_docx(filename: str):
+
+def read_docx(filename: str) -> str:
+    """Reads a DOCX file and returns its content as a string."""
     doc = docx.Document(filename)
-    fullText = []
-    for para in doc.paragraphs:
-        fullText.append(para.text)
-    return '\n'.join(fullText)
-
-def get_files_from_dir(dir_path: str):
-    res = []
-    # Iterate directory
-    for file_path in os.listdir(dir_path):
-        # check if current file_path is a file
-        if os.path.isfile(os.path.join(dir_path, file_path)):
-            # add filename to list
-            res.append(dir_path + file_path)
-    return res
+    return '\n'.join(para.text for para in doc.paragraphs)
 
 
-DOCX_PATH = './files/docx/'
+def get_files_from_dir(dir_path: str) -> list:
+    """Returns a list of files in a given directory."""
+    return [os.path.join(dir_path, file_path) for file_path in os.listdir(dir_path) if
+            os.path.isfile(os.path.join(dir_path, file_path))]
 
-list_of_files = get_files_from_dir(DOCX_PATH)
-pprint(list_of_files, width = 200)
 
-chat = ChatOpenAI(temperature=0, model_name="gpt-4", max_tokens=700)
+def main():
+    DOCX_PATH = './files/docx/'
+    list_of_files = get_files_from_dir(DOCX_PATH)
+    pprint(list_of_files, width=200)
 
-text = read_docx(list_of_files[0])
+    chat = ChatOpenAI(temperature=0, model_name="gpt-4", max_tokens=700)
 
-num_graphics = text.count("graphic-number")
+    text = read_docx(list_of_files[0])
+    num_graphics = text.count("graphic-number")
 
-template = """
-In a document you will find {num_graphics} codes in a format 
-graphic-number-xxx where xxx are three integers.
-For example graphic-number-003.
-Your aim is to make a brief summary of the text around the codes, 
-especially in a paragraph just before the text.
-You provide a reply in a format:
-    ("graphic-number-001": "description to the graphic")
+    template = """
+    In a document you will find {num_graphics} codes in a format 
+    graphic-number-xxx where xxx are three integers.
+    For example graphic-number-003.
+    Your aim is to make a brief summary of the text around the codes, 
+    especially in a paragraph just before the text.
+    You provide a reply in a format:
+        ("graphic-number-001": "description to the graphic")
 
-Document: {document}
-"""
+    Document: {document}
+    """
 
-prompt = PromptTemplate(
-    input_variables = ["num_graphics", "document"],
-    template = template
-)
+    prompt = PromptTemplate(
+        input_variables=["num_graphics", "document"],
+        template=template
+    )
 
-chain = LLMChain(llm = chat, prompt = prompt)
-captions = chain.run(document = text, num_graphics = num_graphics)
-pprint(captions, width=150)
+    chain = LLMChain(llm=chat, prompt=prompt)
+    captions = chain.run(document=text, num_graphics=num_graphics)
+    pprint(captions, width=150)
+
+
+if __name__ == "__main__":
+    main()
 
 '''
 example output: 
