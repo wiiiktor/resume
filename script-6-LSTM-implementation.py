@@ -320,7 +320,7 @@ def initialize_network(load_file=None, tokens=None, hidden_layer=None, num_layer
     if load_file:
         with open(load_file, 'rb') as f:
             checkpoint = torch.load(f)
-        net = Main(tokens=checkpoint['tokens'], n_hidden=checkpoint['n_hidden'])
+        net = Main(tokens=checkpoint['tokens'], n_hidden=checkpoint['n_hidden'], n_layers=checkpoint['n_layers'], drop_prob=drop_prob)
         net.load_state_dict(checkpoint['state_dict'])
     else:
         net = Main(tokens=tokens, n_hidden=hidden_layer, n_layers=num_layers, drop_prob=drop_prob)
