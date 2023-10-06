@@ -24,7 +24,6 @@ def get_files_from_dir(dir_path: str) -> list:
 def main():
     DOCX_PATH = 'data/'
     list_of_files = get_files_from_dir(DOCX_PATH)
-    pprint(list_of_files, width=200)
 
     chat = ChatOpenAI(temperature=0, model_name="gpt-4", max_tokens=700)
 
