@@ -11,7 +11,7 @@ import torch
 import numpy as np
 
 # Configuration
-data_file = '400.txt'
+data_file = 'data/400.txt'
 model_name = 'data/script-3---saved-model.net'
 load_file = 'data/script-3---saved-model.net'
 loading = True
