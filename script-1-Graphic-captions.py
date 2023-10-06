@@ -2,7 +2,6 @@ import os
 import docx
 from dotenv import load_dotenv, find_dotenv
 from pprint import pprint
-from pydantic import BaseModel
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains.llm import LLMChain
