@@ -151,45 +151,33 @@ while True:  # we loop indefinitely
 example output, far from ideal, but showing that backrprop is working properly, 
 elements of natural language are already present: 
 
+iter 909000, loss: 10.036788669256469
 ----
-iter 288500, loss: 13.9954907075849
-----
- All:
-We cuuctussa s,e we remit ce is an ol ind son bur.
-All it rhin they got colangoty
-in the koon: leeyykew, is an: ciils colbccits as hfieypecpverve 
-----
-iter 289000, loss: 13.924289279665265
-----
- eak.
+ I
+aSe cs es an ol ess ro:.
 
-First Citizen:
-Ferst Ciuit thans unonve ie t an'el eie abu peits wee parorcearhesy we her au one we tnimiI, yem tou hus utsher sord thulkvonu
-wl 
+First tith
+ir tie koaw an: Ose guas. yhocnlor as as toudy, us: onjire knon'Blywed would Ik'te'b: , ynoo: an: iredit withts 
 ----
-iter 289500, loss: 13.87444542876221
+iter 909500, loss: 10.079726775126165
 ----
- eed thit Lhes us think buts hud the ire br rors yoov fol flofceldiraty we oncen us olved. 
-oiranAld aurethinges k:ofnearw toj pnene thans, ghcirk at:  
+ utbizen
+withir khonvenw.
+fies at iha peerili iceak, gue aredas onl lreratg;iferanse pacol csactit ti theak bntncptok w. ire ane to theye ceics ans tne 
 ----
-iter 290000, loss: 13.889422366303394
+iter 910000, loss: 10.089117645477367
 ----
- d we hlunourde fionts peen
-ufans thineve git ih'dibht 
-Wi ksan
-awe nnronit ahu erheceo sass wo'l;
-
-AF'tit th icve to't, is ahe the dhem Me dizon:
-lS'i 
+ l:
+Resonved
+atcirodd sor thati rtichud cotvanke perunbu'f misa goon bnore kor, ir thil the kuffuobctki es it yhulrey counteyyise goon
+Yfu tuithei: :ha 
 ----
-iter 290500, loss: 13.800836942049198
+iter 910500, loss: 9.958960656115607
 ----
- they aor cumfsrthunaow ghe profvara ts icions ?
-
-First Citizen
-wAll
-ie dhis tpein Wi kto.
-
-WiOk, the prored as ankowve duzargean: ak, whalmass, hho ke 
+ in thit yiim tht told are walyiaplmer: wim rizimlzen:
+Ferst Citizeny, tho be lnerkleit Is tein
+Loty ss the fricuts hurencffout ak.
+fAld, ruo;:
+Wl ctis 
 ----
 '''
