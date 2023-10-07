@@ -146,3 +146,50 @@ while True:  # we loop indefinitely
 
     p += seq_length  # move data pointer
     n += 1  # iteration counter
+
+''' 
+example output, far from ideal, but showing that backrprop is working properly, 
+elements of natural language are already present: 
+
+----
+iter 288500, loss: 13.9954907075849
+----
+ All:
+We cuuctussa s,e we remit ce is an ol ind son bur.
+All it rhin they got colangoty
+in the koon: leeyykew, is an: ciils colbccits as hfieypecpverve 
+----
+iter 289000, loss: 13.924289279665265
+----
+ eak.
+
+First Citizen:
+Ferst Ciuit thans unonve ie t an'el eie abu peits wee parorcearhesy we her au one we tnimiI, yem tou hus utsher sord thulkvonu
+wl 
+----
+iter 289500, loss: 13.87444542876221
+----
+ eed thit Lhes us think buts hud the ire br rors yoov fol flofceldiraty we oncen us olved. 
+oiranAld aurethinges k:ofnearw toj pnene thans, ghcirk at:  
+----
+iter 290000, loss: 13.889422366303394
+----
+ d we hlunourde fionts peen
+ufans thineve git ih'dibht 
+Wi ksan
+awe nnronit ahu erheceo sass wo'l;
+
+AF'tit th icve to't, is ahe the dhem Me dizon:
+lS'i 
+----
+iter 290500, loss: 13.800836942049198
+----
+ they aor cumfsrthunaow ghe profvara ts icions ?
+
+First Citizen
+wAll
+ie dhis tpein Wi kto.
+
+WiOk, the prored as ankowve duzargean: ak, whalmass, hho ke 
+----
+'''
